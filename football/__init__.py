@@ -17,14 +17,11 @@ app.config['ADMIN_PASSWORD'] = get_config("ADMIN_PASSWORD")
 Bootstrap(app)
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///' + os.path.join(basedir+"/db", 'football.db')
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+from pydal import DAL, Field
+
+db = DAL('sqlite://' + os.path.join(basedir+"/db", 'storage.db') )
 
 from .models import *
-db.create_all()
-db.session.commit()
 
 app.logger.info('App inicializada')

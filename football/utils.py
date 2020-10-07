@@ -1,6 +1,6 @@
 from . import db
 from . import app
-from .models import Domains, DNSTwist
+#from .models import Domains, DNSTwist
 import click
 
 from flask import Blueprint

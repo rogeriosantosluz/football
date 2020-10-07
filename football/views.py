@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, flash, url_for, session, g
 from . import app
 from . import db
-from .models import Domains, DNSTwist
+#from .models import Domains, DNSTwist
 
 @app.route("/")
 def home():
@@ -12,24 +12,24 @@ def home():
 @app.route("/sites")
 def sites():
     #metrics(request, session)
-    domains = Domains.query.all()
-    query = db.session.query(DNSTwist.domain.distinct().label("domain"))
-    dnstwist_domains = [row.domain for row in query.all()]
+    #domains = Domains.query.all()
+    #query = db.session.query(DNSTwist.domain.distinct().label("domain"))
+    #dnstwist_domains = [row.domain for row in query.all()]
     #app.logger.info("dnstwist_domains: {}".format(dnstwist_domains))
     app.logger.info("Sites")
-    return render_template("sites.html", domains=domains, dnstwist_domains=dnstwist_domains)
+    #return render_template("sites.html", domains=domains, dnstwist_domains=dnstwist_domains)
 
 @app.route("/dnstwist")
 def dnstwist():
     #metrics(request, session)
     domain = request.args.get("domain")
     app.logger.info("Domain: {}".format(domain))
-    if domain:
-        dnstwist = DNSTwist.query.filter_by(domain=domain).all()
-    else:
-        dnstwist = DNSTwist.query.all()
+    #if domain:
+    #    dnstwist = DNSTwist.query.filter_by(domain=domain).all()
+    #else:
+    #    dnstwist = DNSTwist.query.all()
     app.logger.info("DNSTwist")
-    return render_template("dnstwist.html", dnstwist=dnstwist)
+    #return render_template("dnstwist.html", dnstwist=dnstwist)
 
 @app.route("/fp/")
 def fp():
