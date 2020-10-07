@@ -32,17 +32,38 @@ sqlite> select * from match;
 """
 
 db.define_table('championship',
-    Field('name', type="string", notnull=True)
+    Field('name', type="string", notnull=True),
+    Field('nation', type="string")
 )
 
 db.define_table('team',
     Field('championship', 'reference championship'),
+    Field('nation', type="string"),
+    Field('amount_of_players', type="string"),
+    Field('media_age', type="string"),
+    Field('market_value', type="string"),
     Field('name', type="string", notnull=True)
+)
+
+db.define_table('manager',
+    Field('name', type="string", notnull=True),
+    Field('nation', type="string"),
+    Field('since', type="string"),
+    Field('contract_expires', type="string"),
+    Field('age', type="string"),
+    Field('team', 'reference team')
 )
 
 db.define_table('player',
     Field('name', type="string", notnull=True),
-    Field('team', 'reference team'),
+    Field('nation', type="string"),
+    Field('number', type="string"),
+    Field('position', type="string"),
+    Field('contract_expires', type="string"),
+    Field('date_of_birth', type="string"),
+    Field('age', type="string"),
+    Field('market_value', type="string"),
+    Field('team', 'reference team')
 )
 
 db.define_table('goal',

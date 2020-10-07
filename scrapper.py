@@ -3,7 +3,7 @@ import json
 import time
 from bs4 import BeautifulSoup
 
-ROOT_DIR = "/Users/rogerioluz/Documents/football/transfermarkt-scrapper/files/"
+ROOT_DIR = "/Users/rogerioluz/Documents/football/files/"
 BASE_URL = 'https://www.transfermarkt.com.br'
 
 headers = {
@@ -147,7 +147,20 @@ if __name__ == "__main__":
     #print(leagueUrls)
     
     leagueUrls = [
-        'https://www.transfermarkt.com.br/serie-a/startseite/wettbewerb/BRA1'
+        'https://www.transfermarkt.com.br/premier-league/startseite/wettbewerb/GB1',
+        'https://www.transfermarkt.com.br/national-league/startseite/wettbewerb/CNAT',
+        'https://www.transfermarkt.com.br/superliga/startseite/wettbewerb/AR1N',
+        'https://www.transfermarkt.com.br/primera-division-de-chile/startseite/wettbewerb/CLPD',
+        'https://www.transfermarkt.com.br/liga-dimayor-i/startseite/wettbewerb/COLP',
+        'https://www.transfermarkt.com.br/ligapro-serie-a-primera-etapa/startseite/wettbewerb/EL1A',
+        'https://www.transfermarkt.com.br/major-league-soccer/startseite/wettbewerb/MLS1',
+        'https://www.transfermarkt.com.br/j1-league/startseite/wettbewerb/JAP1',
+        'https://www.transfermarkt.com.br/liga-mx-apertura/startseite/wettbewerb/MEXA',
+        'https://www.transfermarkt.com.br/primera-division-apertura/startseite/wettbewerb/PR1A',
+        'https://www.transfermarkt.com.br/liga-1-apertura/startseite/wettbewerb/TDeA',
+        'https://www.transfermarkt.com.br/premier-liga/startseite/wettbewerb/RU1',
+        'https://www.transfermarkt.com.br/primera-division-apertura/startseite/wettbewerb/URU1',
+        'https://www.transfermarkt.com.br/torneo-apertura/startseite/wettbewerb/VZ1A'
     ] 
 
     """
