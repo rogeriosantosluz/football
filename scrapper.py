@@ -143,7 +143,6 @@ if __name__ == "__main__":
     print('\n\nInicializando...\n\n')
     #baseSoup = make_request(page)
     #leagueUrls = extract_league_urls(baseSoup)
-
     #print(leagueUrls)
     
     leagueUrls = [
