@@ -14,7 +14,7 @@ def import_teams_players():
     import os 
     from . import db
 
-    ROOT_DIR = "/Users/rogerioluz/Documents/football/files/"
+    ROOT_DIR = "/opt/football/files/"
     for file_name in os.listdir(ROOT_DIR):
         print("###########################-----------------")
         print("CAMPEONATO: {}".format(file_name))
