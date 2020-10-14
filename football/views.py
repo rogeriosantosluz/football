@@ -48,7 +48,7 @@ def login_handle():
 def login():
     app.logger.info('Login')
     if session.get('logged_in'):
-        flash("You are already logged in")
+        #flash("You are already logged in")
         return to_index()
     if request.method == 'POST':
         username = request.form.get('username')
@@ -56,10 +56,11 @@ def login():
         if (username == app.config['ADMIN_USERNAME'] and
             password == app.config['ADMIN_PASSWORD']):
             session['logged_in'] = True
-            flash("Successfully logged in")
+            #flash("Successfully logged in")
             return to_index()
         else:
-            flash("Those credentials were incorrect")
+            pass
+            #flash("Those credentials were incorrect")
     return render_template('login.html')
 
 
