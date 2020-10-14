@@ -1,4 +1,4 @@
-from football import webapp as application
+from football.webapp import app
 
 if __name__ == "__main__":
-    webapp.app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0')
