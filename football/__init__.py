@@ -9,6 +9,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
 app.config['SECRET_KEY'] = get_config("SECRET_KEY")
+app.config['SESSION_TYPE'] = 'filesystem'
 app.config['ADMIN_USERNAME'] = get_config("ADMIN_USERNAME")
 app.config['ADMIN_PASSWORD'] = get_config("ADMIN_PASSWORD")
 
