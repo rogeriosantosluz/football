@@ -159,7 +159,6 @@ if __name__ == "__main__":
         'https://www.transfermarkt.com.br/primera-division-apertura/startseite/wettbewerb/URU1',
         'https://www.transfermarkt.com.br/torneo-apertura/startseite/wettbewerb/VZ1A'
     ] 
-
     """
         'https://www.transfermarkt.com.br/serie-a/startseite/wettbewerb/IT1', 
         'https://www.transfermarkt.com.br/1-bundesliga/startseite/wettbewerb/L1', 
@@ -188,7 +187,6 @@ if __name__ == "__main__":
         'https://www.transfermarkt.com.br/laliga/startseite/wettbewerb/ES1'
     ]
         'https://www.transfermarkt.com.br/serie-b/startseite/wettbewerb/BRA2',
-
     """
 
     n = len(leagueUrls)
