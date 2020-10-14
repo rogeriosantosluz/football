@@ -8,7 +8,7 @@
 * export FLASK_ENV=development (default é production)
 * python3 -m flask run --host=0.0.0.0 (PS> flask run)
 
-* Criar o arquivo .env na raiz com as seguintes informações:
+* Criar o arquivo .env na raiz (/Users/rogerioluz/Documents/football) com as seguintes informações:
 
     * SECRET_KEY = b'sua chave secreta'
     * ADMIN_USERNAME = 'Seu usuario administrador'
