@@ -13,3 +13,28 @@
     * SECRET_KEY = b'sua chave secreta'
     * ADMIN_USERNAME = 'Seu usuario administrador'
     * ADMIN_PASSWORD = 'Uma senha'
+
+https://flask.palletsprojects.com/en/1.1.x/cli/
+
+Directories are scanned upwards from the directory you call flask from to locate the files. 
+The current working directory will be set to the location of the file, with the assumption that that is the top level project directory.
+
+
+## WSGI
+
+/etc/systemd/system/football.service
+
+[Unit]
+Description=uWSGI instance to serv football
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/football
+Environment="PATH=/opt/football/env/bin"
+ExecStart=/opt/football/env/bin/uwsgi --ini wsgi.ini
+
+[Install]
+WantedBy=multi-user.target
+
