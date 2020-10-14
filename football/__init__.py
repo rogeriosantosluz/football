@@ -2,8 +2,6 @@ import os
 import logging
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from .config import get_config
 
 app = Flask(__name__)

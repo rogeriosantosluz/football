@@ -9,27 +9,27 @@ def home():
     app.logger.info("Home")
     return render_template("home.html")
 
-@app.route("/sites")
-def sites():
+@app.route("/players")
+def players():
     #metrics(request, session)
     #domains = Domains.query.all()
     #query = db.session.query(DNSTwist.domain.distinct().label("domain"))
     #dnstwist_domains = [row.domain for row in query.all()]
     #app.logger.info("dnstwist_domains: {}".format(dnstwist_domains))
-    app.logger.info("Sites")
-    #return render_template("sites.html", domains=domains, dnstwist_domains=dnstwist_domains)
+    app.logger.info("Players")
+    return render_template("players.html")
 
-@app.route("/dnstwist")
-def dnstwist():
+@app.route("/teams")
+def teams():
     #metrics(request, session)
-    domain = request.args.get("domain")
-    app.logger.info("Domain: {}".format(domain))
+    #domain = request.args.get("domain")
+    #app.logger.info("Domain: {}".format(domain))
     #if domain:
     #    dnstwist = DNSTwist.query.filter_by(domain=domain).all()
     #else:
     #    dnstwist = DNSTwist.query.all()
-    app.logger.info("DNSTwist")
-    #return render_template("dnstwist.html", dnstwist=dnstwist)
+    app.logger.info("Teams")
+    return render_template("teams.html")
 
 @app.route("/fp/")
 def fp():
