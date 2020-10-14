@@ -133,11 +133,9 @@ def extract_league_info(pageSoup):
         print(i, ' of ', n, 'CLUBS scrapped')
         time.sleep(5)
 
-
     leagueInfo['clubs'] = clubsInfo
 
     return leagueInfo['name'], leagueInfo
-
 
 if __name__ == "__main__":
     print('\n\nInicializando...\n\n')
