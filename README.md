@@ -38,3 +38,16 @@ ExecStart=/opt/football/env/bin/uwsgi --ini wsgi.ini
 [Install]
 WantedBy=multi-user.target
 
+## stop start status
+
+root@lab-morphine:/opt/football# systemctl start football
+root@lab-morphine:/opt/football# systemctl stop football
+root@lab-morphine:/opt/football# systemctl status football
+
+
+https://www.digitalocean.com/community/tutorials/how-to-serve-flask-applications-with-uswgi-and-nginx-on-ubuntu-18-04
+
+## NGINX
+
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
+
