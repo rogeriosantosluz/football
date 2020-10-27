@@ -1,5 +1,7 @@
 ## Instalação
 
+Football Championship is a proof of concept using Flask as backend and Vue as frontend (https://github.com/rogeriosantosluz/football-vue)
+
 * python3 -m pip install --upgrade pip
 * python3 -m venv env (PS> virtualenv env)
 * source env/bin/activate (PS> .\env\Scripts\activate.bat)
