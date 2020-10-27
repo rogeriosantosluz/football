@@ -6,3 +6,4 @@ Flask==1.1.2
 Flask-Bootstrap4==4.0.2
 python-dotenv==0.14.0
 pydal
+Flask-Cors==1.10.3

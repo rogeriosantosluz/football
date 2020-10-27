@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash, url_for, session, g
+from flask import Flask, render_template, request, redirect, flash, url_for, session, g, jsonify
 from . import app
 from . import db
 #from .models import Domains, DNSTwist
@@ -9,27 +9,28 @@ def home():
     app.logger.info("Home")
     return render_template("home.html")
 
-@app.route("/players")
+@app.route("/players", methods=['GET'])
 def players():
-    #metrics(request, session)
-    #domains = Domains.query.all()
-    #query = db.session.query(DNSTwist.domain.distinct().label("domain"))
-    #dnstwist_domains = [row.domain for row in query.all()]
-    #app.logger.info("dnstwist_domains: {}".format(dnstwist_domains))
-    app.logger.info("Players")
-    return render_template("players.html")
+    team = request.args.get("team")
+    response_object = {'status': 'success'}
+    app.logger.info("Players team:{}".format(team))
+    response_object['players'] = db((db.player.team==db.team.id)&(db.team.id==team)).select(db.player.ALL).as_list()
+    return jsonify(response_object)
 
-@app.route("/teams")
+@app.route("/teams", methods=['GET'])
 def teams():
-    #metrics(request, session)
-    #domain = request.args.get("domain")
-    #app.logger.info("Domain: {}".format(domain))
-    #if domain:
-    #    dnstwist = DNSTwist.query.filter_by(domain=domain).all()
-    #else:
-    #    dnstwist = DNSTwist.query.all()
-    app.logger.info("Teams")
-    return render_template("teams.html")
+    championship = request.args.get("championship")
+    response_object = {'status': 'success'}
+    app.logger.info("Teams championship:{}".format(championship))
+    response_object['teams'] = db((db.team.championship==db.championship.id) & (db.championship.id==championship)).select(db.team.ALL).as_list()
+    return jsonify(response_object)
+
+@app.route("/championships", methods=['GET'])
+def championships():
+    response_object = {'status': 'success'}
+    app.logger.info("Championships")
+    response_object['championships'] = db(db.team.championship==db.championship.id).select(db.championship.id, db.championship.name, distinct=True).as_list()
+    return jsonify(response_object)
 
 @app.route("/fp/")
 def fp():

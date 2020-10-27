@@ -8,14 +8,14 @@ from flask import Blueprint
 bp = Blueprint('utils', __name__)
 
 @bp.cli.command('import_teams_players')
-def import_teams_players():
+@click.option('--diretorio', default="/opt/football/files/", prompt='Diretorio do local dos arquivos JSON')
+def import_teams_players(diretorio):
     """ Import teams and players """
     import json
     import os 
     from . import db
 
-    ROOT_DIR = "/opt/football/files/"
-    for file_name in os.listdir(ROOT_DIR):
+    for file_name in os.listdir(diretorio):
         print("###########################-----------------")
         print("CAMPEONATO: {}".format(file_name))
         print("###########################-----------------")
@@ -23,7 +23,7 @@ def import_teams_players():
         championship = db.championship.insert(name=file_name.split(".json")[0])
 
         # read file
-        with open(ROOT_DIR + file_name, 'r') as myfile:
+        with open(diretorio + file_name, 'r') as myfile:
             data=myfile.read()
 
         # parse file

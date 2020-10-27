@@ -1,10 +1,14 @@
 import os
 import logging
 from flask import Flask
+from flask_cors import CORS
 from flask_bootstrap import Bootstrap
 from .config import get_config
 
 app = Flask(__name__)
+
+# enable CORS
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 logging.basicConfig(level=logging.DEBUG)
 
